@@ -30,10 +30,10 @@ let errorsCounter = 0;
 
 // Prendo il record salvato nel localStorage
 let bestScore = localStorage.getItem('bestScore');
-record.innerHTML = bestScore != null ? `Best game: ${bestScore} attemps` : 'No record';
+record.innerHTML = bestScore != null ? `Best Game: ${bestScore} Attemps` : 'No record';
 
 // Inizializzo il contatore degli errori
-counter.innerText = `Attemps: ${errorsCounter}`;
+counter.innerText = `Current Attemps: ${errorsCounter}`;
 
 // Mischio le carte ad ogni avvio
 cards = cards.sort(() => 0.5 - Math.random());
@@ -95,7 +95,7 @@ function checkForMatch() {
     } else {
         setTimeout(() => {
             errorsCounter++;
-            counter.innerText = `Attemps: ${errorsCounter}`;
+            counter.innerText = `Current Attemps: ${errorsCounter}`;
             card1.classList.remove('flipped');
             card2.classList.remove('flipped');
         }, 400);

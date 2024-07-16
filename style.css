@@ -7,6 +7,7 @@
 
 body {
     height: 100vh;
+    font-family: 'VT323', monospace;
 }
 
 .wrapper {
@@ -74,7 +75,8 @@ h3 {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    gap: 5rem;
+    padding-top: 1rem;
 }
 
 
