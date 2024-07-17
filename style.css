@@ -1,3 +1,5 @@
+/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +7,11 @@
 }
 
 
+/* General */
+
 body {
     height: 100dvh;
-    font-family: 'VT323', monospace;
+    font-family: "Press Start 2P", system-ui;
 }
 
 .wrapper {
@@ -28,10 +32,71 @@ body {
     margin: auto;
 }
 
+
+/* Logo */
+
 #logo {
     width: 30%;
     margin-bottom: 2rem;
+    animation: pulse 3s infinite;
 }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Scoreboard */
+
+#scoreboard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    padding-top: 1rem;
+}
+
+#attempts {
+    color: rgb(255, 16, 125);
+}
+
+h2 {
+    color: white;
+    font-size: 5rem;
+    text-wrap: wrap;
+}
+
+h3 {
+    color: white;
+    font-size: 3rem;
+    text-wrap: nowrap;
+    margin-bottom: 1rem;
+}
+
+button {
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgb(5, 5, 134);
+}
+
+
+/* Board */
 
 #msg {
     display: none;
@@ -43,42 +108,11 @@ body {
     text-align: center;
 }
 
-button {
-    margin-top: 4rem;
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    background-color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px rgb(5, 5, 134);
-}
-
 .board {
     display: grid;
     grid-template-columns: repeat(4, 200px);
     grid-gap: 10px;
 }
-
-h2 {
-    color: white;
-    font-size: 5rem;
-}
-
-h3 {
-    color: white;
-    font-size: 3rem;
-    text-wrap: nowrap;
-}
-
-#scoreboard {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    padding-top: 1rem;
-}
-
 
 
 /* Cards */
@@ -124,12 +158,15 @@ h3 {
 }
 
 
+
+/* Mobile Media Query */
+
 @media (max-width: 600px) {
     
     .container {
         flex-direction: column;
         width: 100%;
-        gap: 2rem;
+        gap: 1rem;
         margin: 1rem;
     }
 
@@ -150,10 +187,11 @@ h3 {
     h3 {
         font-size: 1rem;
         text-wrap: nowrap;
+        margin: .5rem;
     }
 
     .wrapper {
-        padding: 15% !important;
+        padding: .5rem 0 .5rem;
     }
 
     #msg {
@@ -162,7 +200,7 @@ h3 {
     }
 
     button {
-        margin-top: 1rem;
+        margin: 0;
         padding: .5rem 1rem;
         font-size: 1rem;
         border-radius: 10px;
@@ -175,7 +213,7 @@ h3 {
     }
 
     #logo {
-        margin-bottom: 1rem;
+        margin-bottom: 0;
         width: 70%;
     }
 }

@@ -4,7 +4,12 @@ const msg = document.getElementById('msg');
 const errorsCount = document.getElementById('errorCount');
 const record = document.getElementById('record');
 const scoreBoard = document.getElementById('scoreboard');
-const restart = document.querySelector('button');
+const restart = document.querySelectorAll('button');
+
+// Bottoni di game reset
+restart.forEach( b => {
+    b.addEventListener('click', () => {location.reload()});
+})
 
 // Icone carte e relativo id
 const icons = [
@@ -30,10 +35,10 @@ let errorsCounter = 0;
 
 // Prendo il record salvato nel localStorage
 let bestScore = localStorage.getItem('bestScore');
-record.innerHTML = bestScore != null ? `Best Game: ${bestScore} Attemps` : 'No record';
+record.innerHTML = bestScore != null ? `Best Game: ${bestScore} Errors` : 'No record';
 
 // Inizializzo il contatore degli errori
-counter.innerText = `Current Attemps: ${errorsCounter}`;
+counter.innerText = `Curr game: ${errorsCounter} Errors`;
 
 // Mischio le carte ad ogni avvio
 cards = cards.sort(() => 0.5 - Math.random());
@@ -95,7 +100,7 @@ function checkForMatch() {
     } else {
         setTimeout(() => {
             errorsCounter++;
-            counter.innerText = `Current Attemps: ${errorsCounter}`;
+            counter.innerText = `Curr Game: ${errorsCounter} Errors`;
             card1.classList.remove('flipped');
             card2.classList.remove('flipped');
         }, 400);
@@ -110,5 +115,4 @@ function showMessage() {
     scoreBoard.style.display = 'none';
     errorsCount.innerText = errorsCounter;
     msg.style.display = 'flex';
-    restart.addEventListener('click', () => {location.reload()});
 }
