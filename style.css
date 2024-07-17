@@ -171,21 +171,21 @@ button {
     }
 
     .card {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
 
     .board {
-        grid-template-columns: repeat(3, 100px);
-        grid-gap: 3px;
+        grid-template-columns: repeat(3, 70px);
+        grid-gap: 2px;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1rem;
     }
     
     h3 {
-        font-size: 1rem;
+        font-size: .5rem;
         text-wrap: nowrap;
         margin: .5rem;
     }
@@ -200,7 +200,7 @@ button {
     }
 
     button {
-        margin: 0;
+        margin-top: 1rem;
         padding: .5rem 1rem;
         font-size: 1rem;
         border-radius: 10px;
