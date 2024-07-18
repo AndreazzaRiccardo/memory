@@ -5,6 +5,9 @@ const errorsCount = document.getElementById('errorCount');
 const record = document.getElementById('record');
 const scoreBoard = document.getElementById('scoreboard');
 const restart = document.querySelectorAll('button');
+const completionSound = document.getElementById('completionSound');
+const errorSound = document.getElementById('error');
+const correctSound = document.getElementById('correct');
 
 // Bottoni di game reset
 restart.forEach( b => {
@@ -87,9 +90,19 @@ function checkForMatch() {
     const card2 = flippedCards[1];
 
     if (card1.dataset.id === card2.dataset.id) {
+        correctSound.play();
         card1.removeEventListener('click', flipCard);
         card2.removeEventListener('click', flipCard);
         matchedPairs++;
+
+        card1.classList.add('shine');
+        card2.classList.add('shine');
+
+        setTimeout(() => {
+            card1.classList.remove('shine');
+            card2.classList.remove('shine');
+        }, 1500);
+
 
         if (matchedPairs === icons.length) {
             if(bestScore == null || errorsCounter < bestScore){
@@ -98,6 +111,7 @@ function checkForMatch() {
             setTimeout(showMessage, 500);
         }
     } else {
+        errorSound.play();
         setTimeout(() => {
             errorsCounter++;
             counter.innerText = `Curr Game: ${errorsCounter} Errors`;
@@ -111,8 +125,24 @@ function checkForMatch() {
 
 // Gestisco il messaggio finale del gioco
 function showMessage() {
-    gameBoard.style.display = 'none';
-    scoreBoard.style.display = 'none';
-    errorsCount.innerText = errorsCounter;
-    msg.style.display = 'flex';
+
+    const allCards = document.querySelectorAll('.card');
+    allCards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('zoom');
+            setTimeout(() => {
+                card.classList.remove('zoom');
+            }, 200);
+        }, index * 100);
+    });
+
+    completionSound.play();
+
+    setTimeout(() => {
+        gameBoard.style.display = 'none';
+        scoreBoard.style.display = 'none';
+        errorsCount.innerText = errorsCounter;
+        msg.style.display = 'flex';
+    }, allCards.length * 100 + 400);
+    
 }
