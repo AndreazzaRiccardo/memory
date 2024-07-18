@@ -76,6 +76,7 @@ h2 {
     color: white;
     font-size: 5rem;
     text-wrap: wrap;
+    align-self: self-start;
 }
 
 h3 {
@@ -96,6 +97,7 @@ button {
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 10px 10px 5px rgb(5, 5, 134);
+    width: 50%;
 }
 
 
@@ -110,6 +112,10 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+#cheat {
+    display: none;
 }
 
 .board {
@@ -221,6 +227,7 @@ button {
 
     h2 {
         font-size: 1rem;
+        align-self: center;
     }
     
     h3 {
@@ -244,6 +251,7 @@ button {
         font-size: 1rem;
         border-radius: 10px;
         box-shadow: 10px 10px 5px rgb(5, 5, 134);
+        width: auto;
     }
 
     #scoreboard {
