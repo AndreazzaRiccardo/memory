@@ -11,7 +11,7 @@
 /* General */
 
 body {
-    height: 100dvh;
+    height: 100vh;
     font-family: "Press Start 2P", system-ui;
 }
 
@@ -19,7 +19,6 @@ body {
     padding: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: rgb(70, 70, 255);
     height: 100%;
@@ -30,6 +29,7 @@ body {
     display: flex;
     gap: 5rem;
     align-items: center;
+    justify-content: center;
     margin: auto;
 }
 
@@ -64,7 +64,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    justify-content: space-around;
+    gap: 3rem;
     padding-top: 1rem;
 }
 
@@ -179,13 +180,13 @@ button {
 /* Animazione scelta corretta */
 
 @keyframes shine {
-    0%, 100% { 
-        opacity: 1; 
-        transform: scale(1); 
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
     }
-    50% { 
-        opacity: 0; 
-        transform: scale(1.1); 
+    50% {
+        opacity: 0;
+        transform: scale(1.1);
     }
 }
 
@@ -213,7 +214,11 @@ button {
 /* Mobile Media Query */
 
 @media (max-width: 600px) {
-    
+
+    body {
+        height: 100dvh;
+    }
+
     .container {
         flex-direction: column;
         width: 100%;
@@ -235,7 +240,7 @@ button {
         font-size: 1rem;
         align-self: center;
     }
-    
+
     h3 {
         font-size: .5rem;
         text-wrap: nowrap;
@@ -268,5 +273,51 @@ button {
     #logo {
         margin-bottom: 0;
         width: 70%;
+    }
+}
+
+
+/* Media query 4k */
+
+@media (max-width: 1540px) {
+    .card {
+        width: 150px;
+        height: 150px;
+    }
+
+    .board {
+        grid-template-columns: repeat(4, 150px);
+    }
+
+    .wrapper {
+        padding: 2%;
+    }
+
+    button {
+        margin-top: 2rem;
+        padding: .5rem 1rem;
+        font-size: 2rem;
+        background-color: transparent;
+        color: white;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #scoreboard {
+        justify-content: space-around;
+        gap: 2rem;
+    }
+
+    .container {
+        width: 80%;
+        gap: 2rem;
     }
 }
