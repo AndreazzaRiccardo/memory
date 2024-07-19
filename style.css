@@ -40,7 +40,7 @@ body {
 
 #logo {
     margin-bottom: 0;
-    width: 70%;
+    width: 60%;
     animation: pulse 3s infinite;
 }
 
@@ -219,7 +219,7 @@ button {
 
 /* Mediaquery 2k */
 
-@media (min-width: 600px) {
+@media (min-width: 1420px) {
 
     /* General */
 
@@ -244,7 +244,7 @@ button {
     /* Logo */
 
     #logo {
-        width: 30%;
+        width: 25%;
         margin-bottom: 2rem;
     }
 
