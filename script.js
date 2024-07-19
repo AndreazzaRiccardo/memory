@@ -159,6 +159,9 @@ function showMessage() {
     completionSound.play();
 
     setTimeout(() => {
+        if(errorsCounter > 2) {
+            msgCheat.style.display = 'none';
+        }
         gameBoard.style.display = 'none';
         scoreBoard.style.display = 'none';
         errorsCount.innerText = errorsCounter;
