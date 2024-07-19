@@ -128,7 +128,7 @@ function checkForMatch() {
             if(bestScore == null || errorsCounter < bestScore){
                 localStorage.setItem('bestScore', errorsCounter);
             }
-            setTimeout(showMessage, 500);
+            setTimeout(showMessage, 1000);
         }
     } else {
         errorSound.play();
