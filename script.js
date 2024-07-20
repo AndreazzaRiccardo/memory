@@ -164,7 +164,7 @@ function showMessage() {
         }
         gameBoard.style.display = 'none';
         scoreBoard.style.display = 'none';
-        errorsCount.innerText = errorsCounter;
+        errorsCount.innerText = ` ${errorsCounter} `;
         msg.style.display = 'flex';
     }, allCards.length * 100 + 400);
 }
